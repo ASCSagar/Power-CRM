@@ -31,14 +31,14 @@ const Sites = () => {
     },
   ];
 
-  // const rowSelection = {
-  //   onChange: (selectedRowKeys, selectedRows) => {
-  //     console.log(selectedRows);
-  //   },
-  //   getCheckboxProps: (record) => ({
-  //     name: record.name,
-  //   }),
-  // };
+  const rowSelection = {
+    onChange: (selectedRowKeys, selectedRows) => {
+      console.log(selectedRows);
+    },
+    getCheckboxProps: (record) => ({
+      name: record.name,
+    }),
+  };
 
   const columns = [
     {
@@ -143,9 +143,9 @@ const Sites = () => {
                       indicator: "Fetching...",
                       spinning: false,
                     }}
-                    // rowSelection={{
-                    //   ...rowSelection,
-                    // }}
+                    rowSelection={{
+                      ...rowSelection,
+                    }}
                     columns={columns}
                     dataSource={tempData || []}
                     className="display dataTable no-footer w-100"
